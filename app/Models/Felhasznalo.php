@@ -20,4 +20,6 @@ class Felhasznalo extends Model
 {
     /** @use HasFactory<\Database\Factories\FelhasznaloFactory> */
     use HasFactory;
+    protected $table = 'felhasznalok';
+    public $timestamps = false;
 }

@@ -9,6 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    protected $table = 'felhasznalok';
+    
     public function up(): void
     {
         Schema::create('felhasznalok', function (Blueprint $table) {

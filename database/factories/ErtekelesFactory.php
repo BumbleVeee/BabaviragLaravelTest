@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Ertekeles;
+use App\Models\Felhasznalo;
+use App\Models\Termek;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +20,10 @@ class ErtekelesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'felhasznalo_id' => Felhasznalo::factory(),
+            'termek_id' => Termek::factory(),
+            'ertekeles' => fake()->numberBetween(1, 5),
+            'komment' => fake()->sentence(),
         ];
     }
 }

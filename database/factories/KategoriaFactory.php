@@ -18,7 +18,12 @@ class KategoriaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nev' => fake()->word(),
+            'leiras' => fake()->sentence(),
+            'szulo_kategoria_id' => null,
+            'telefon' => fake()->phoneNumber(),
+            'kep_url' => fake()->imageUrl(),
+            'sorrend' => fake()->numberBetween(1, 100),
         ];
     }
 }

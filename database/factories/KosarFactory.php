@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Felhasznalo;
 use App\Models\Kosar;
+use App\Models\Termek;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +20,10 @@ class KosarFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'felhasznalo_id' => Felhasznalo::factory(),
+            'termek_id' => Termek::factory(),
+            'mennyiseg' => fake()->numberBetween(1, 5),
+            'hozzaadva_datum' => fake()->dateTimeBetween('-30 days', 'now'),
         ];
     }
 }

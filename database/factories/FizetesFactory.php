@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Fizetes;
+use App\Models\Rendeles;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,10 @@ class FizetesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'rendeles_id' => Rendeles::factory(),
+            'fizetes_modja' => fake()->randomElement(['Készpénz', 'Bankkártya', 'Átutalás']),
+            'fizetes_allapota' => fake()->randomElement(['Fizetve', 'Függőben', 'Elutasítva']),
+            'fizetes_datum' => fake()->dateTimeBetween('-30 days', 'now'),
         ];
     }
 }

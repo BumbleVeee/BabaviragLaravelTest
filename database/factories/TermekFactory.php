@@ -18,7 +18,12 @@ class TermekFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nev' => fake()->word(),
+            'leiras' => fake()->sentence(),
+            'ar' => fake()->randomFloat(2, 1, 100),
+            'keszlet' => fake()->numberBetween(0, 100),
+            'kep_url' => fake()->imageUrl(),
+            'sorrend' => fake()->numberBetween(1, 100),
         ];
     }
 }

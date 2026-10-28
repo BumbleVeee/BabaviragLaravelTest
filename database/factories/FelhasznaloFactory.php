@@ -18,7 +18,14 @@ class FelhasznaloFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'email' => fake()->unique()->safeEmail(),
+            'jelszo_hash' => bcrypt('password'),
+            'keresztnev' => fake()->firstName(),
+            'vezeteknev' => fake()->lastName(),
+            'telefon' => fake()->phoneNumber(),
+            'regisztracio_datuma' => now(),
+            'utolso_belepes' => now(),
+            'szerepkor' => 'user',
         ];
     }
 }
